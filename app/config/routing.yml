@@ -1,0 +1,8 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+
+service_change:
+    resource: |
+        alias: london_bus_routes.service_change
+    type: sylius.resource

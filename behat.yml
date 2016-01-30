@@ -1,0 +1,18 @@
+default:
+  extensions:
+    Behat\MinkExtension:
+      base_url: 'http://127.0.0.1:8000'
+      sessions:
+        default:
+          goutte: ~
+
+    Behat\Symfony2Extension:
+      kernel:
+        class: AppKernel
+        path: app/AppKernel.php
+
+  suites:
+    default:
+      contexts:
+        - Behat\MinkExtension\Context\MinkContext
+        - Sylius\Bundle\ResourceBundle\Behat\WebContext
