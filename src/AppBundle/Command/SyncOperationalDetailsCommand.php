@@ -9,12 +9,12 @@ use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
-class SyncServiceChangesCommand extends ContainerAwareCommand
+class SyncOperationalDetailsCommand extends ContainerAwareCommand
 {
     protected function configure()
     {
-        $this->setName('lbr:sync:service-changes');
-        $this->setAliases(['service-changes']);
+        $this->setName('lbr:sync:operational-details');
+        $this->setAliases(['operational-details']);
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
@@ -33,7 +33,7 @@ class SyncServiceChangesCommand extends ContainerAwareCommand
 
         $scenario
             ->endpoint('http://londonbusroutes.net')
-            ->visit("url('/changes.htm')")
+            ->visit("url('/details.htm')")
             ->expect('status_code() == 200')
             ->extract('table_count', 'css("table").count()')
 

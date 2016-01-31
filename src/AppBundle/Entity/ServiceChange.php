@@ -12,7 +12,27 @@ class ServiceChange implements ResourceInterface
     private $id;
 
     /**
-     * @return mixed
+     * @var BusRoute
+     */
+    private $busRoute;
+
+    /**
+     * @var \DateTime
+     */
+    private $expectedDate;
+
+    /**
+     * @var \DateTime
+     */
+    private $updated;
+
+    /**
+     * @var string
+     */
+    private $type;
+
+    /**
+     * {@inheritdoc}
      */
     public function getId()
     {

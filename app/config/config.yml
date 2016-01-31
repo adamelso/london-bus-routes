@@ -68,6 +68,18 @@ swiftmailer:
 
 sylius_resource:
     resources:
-        london_bus_routes.service_change:
+        london_bus_routes.bus_route:
             classes:
-                model: LondonBusRoutes\AppBundle\Entity\ServiceChange
+                model: LondonBusRoutes\AppBundle\Entity\BusRoute
+
+        london_bus_routes.footnote:
+            classes:
+                model: LondonBusRoutes\AppBundle\Entity\Footnote
+
+        london_bus_routes.frequency:
+            classes:
+                model: LondonBusRoutes\AppBundle\Entity\Frequency
+
+#        london_bus_routes.service_change:
+#            classes:
+#                model: LondonBusRoutes\AppBundle\Entity\ServiceChange
