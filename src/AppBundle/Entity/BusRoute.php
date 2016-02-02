@@ -16,6 +16,11 @@ class BusRoute implements ResourceInterface
      */
     private $number;
 
+    /**
+     * @var bool
+     */
+    private $nightBus;
+
     /*
      * @var ServiceOperation[];
      *
@@ -32,22 +37,22 @@ class BusRoute implements ResourceInterface
     private $operationGarages = [];
 
     /**
-     * @var integer
+     * @var int
      */
     private $pvr;
 
     /**
-     * @var integer
+     * @var int
      */
     private $distance;
 
     /**
-     * @var integer
+     * @var int
      */
     private $journeyTimeLowerBound;
 
     /**
-     * @var integer
+     * @var int
      */
     private $journeyTimeUpperBound;
 
@@ -93,7 +98,39 @@ class BusRoute implements ResourceInterface
     }
 
     /**
-     * @return \string[]
+     * @return string
+     */
+    public function getNumber()
+    {
+        return $this->number;
+    }
+
+    /**
+     * @param string $number
+     */
+    public function setNumber($number)
+    {
+        $this->number = $number;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isNightBus()
+    {
+        return $this->nightBus;
+    }
+
+    /**
+     * @param bool $nightBus
+     */
+    public function setNightBus($nightBus)
+    {
+        $this->nightBus = $nightBus;
+    }
+
+    /**
+     * @return string[]
      */
     public function getVehicleTypes()
     {
@@ -101,7 +138,7 @@ class BusRoute implements ResourceInterface
     }
 
     /**
-     * @param \string[] $vehicleTypes
+     * @param string[] $vehicleTypes
      */
     public function setVehicleTypes($vehicleTypes)
     {
@@ -109,7 +146,7 @@ class BusRoute implements ResourceInterface
     }
 
     /**
-     * @return \string[]
+     * @return string[]
      */
     public function getOperationGarages()
     {
@@ -117,7 +154,7 @@ class BusRoute implements ResourceInterface
     }
 
     /**
-     * @param \string[] $operationGarages
+     * @param string[] $operationGarages
      */
     public function setOperationGarages($operationGarages)
     {
